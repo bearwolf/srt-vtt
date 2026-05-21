@@ -1,0 +1,23 @@
+WEBVTT
+
+STYLE
+::cue {
+  background-color: rgba(0,0,0,0.5);
+  color: White;
+}
+
+00:00:01.000 --> 00:00:02.000 line:70% align:center
+Detta är en exempel-textning
+på två rader
+
+00:00:02.001 --> 00:00:03.000 line:70% align:center
+Här kommer lite längre text som
+visar hur radbrytning fungerar
+
+00:00:03.001 --> 00:00:04.000 line:70% align:center
+Kort rad
+
+
+00:00:04.001 --> 00:00:05.000 line:70% align:center
+Detta är sista texten
+som visar hur det ser ut

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRT to VTT converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="png/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="png/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="png/favicon-16x16.png"
+  />
+</head>
+<body>
+
+
+    <div class="main-wrapper">
+        <div class="container">
+
+            <p id="p2" style="position: relative;"> <!-- Add position: relative here -->
+                
+                <b>VTT-Tool</b>
+              </p>
+              <p id="p3" style="text-align: center;">
+                Upload your SRT file, choose position, style and download. You can preview the textblocks in the first 10 seconds.
+              </p>
+              <input type="file" id="srtInput" accept=".srt">
+              <div>
+                <div class="subtitle-controls">
+                  <div hidden>
+                    <label hidden>Text width:</label>
+                    <select id="textSize" hidden>
+                        <option value="100%" selected>Full width</option>
+                        <option value="80%" >80%</option>
+                        <option value="60%">60%</option>
+                        <option value="40%">Narrow</option>
+                    </select>
+                </div>
+                <div style="display: none;">
+                    <label>Textcolor:</label>
+                    <select id="textColor">
+                        <option value="white" selected>White</option>
+                        <option value="#d6ff43">Urheilu-yellow</option>
+                        <option value="#10ffb2">Kioski-green</option>
+                        <option value="#f9799a">Svenska Yle-Pink</option>
+                        <option value="#00c1d2">Yle-blue</option>
+                    </select>
+                </div>
+                <div>
+                  <label>Text background:</label>
+                  <select id="bgColor">
+                      <option value="rgba(0,0,0,0.75)">Black 75%</option>
+                      <option value="rgba(0,0,0,0.5)" selected>Black 50%</option>
+                      <option value="rgba(0,0,0,0)">Transparent</option>
+                  </select>
+              </div>
+              <div>
+                    <label>Text position:</label>
+                    <select id="linePosition">
+                        <option value="line:40%">Higher</option>
+                        <option value="line:50%">High</option>
+                        <option value="line:60%">Medium</option>
+                        <option value="line:70%" selected>Low default</option>
+                    </select>
+                </div>
+                
+        <div hidden>
+                    <label hidden>Justering:</label>
+                    <select id="alignment" hidden>
+                        <option value="align:left">Vänster</option>
+                        <option value="align:center" selected>Centrerad</option>
+                        <option value="align:right">Höger</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+            <div class="preview-controls">
+                <button id="prevCue">Previous text</button>
+                <button id="nextCue">Next text</button>
+            </div>
+           
+            <div id="downloadButton">
+              <button id="downloadVTT">Download VTT</button>
+          </div>
+        </div>
+        
+
+        <div class="canvas-container">
+
+            <div id="previewContainer">
+                <video width="349" height="620" poster="png/preview2.png">
+                    <source src="video/dummy2.mp4" type="video/mp4">
+
+                    <track 
+                        id="subtitleTrack"
+                        label="Svenska" 
+                        kind="subtitles" 
+                        srclang="sv" 
+                        src="subtitles/placeholder.vtt" 
+                        default>
+                </video>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
